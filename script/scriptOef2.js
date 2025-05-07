@@ -54,8 +54,18 @@ groenten.forEach((groente)=>{
 
 //kostprijs
 selectBox.addEventListener("change", (args) => {
-  console.log(args.target.selectedIndex);
+  const gevondenGroente = groenten.find(
+    (groente) => groente.id == args.target.value)
+  console.log(gevondenGroente);
+  setKostprijs(kostprijs, gevondenGroente.prijs)
 });
+
+function setKostprijs(element,kostprijs){
+  element.textContent = ""
+  const newP = document.createElement("p")
+  newP.textContent = "$" + kostprijs
+  element.appendChild(newP)
+}
 
 
 

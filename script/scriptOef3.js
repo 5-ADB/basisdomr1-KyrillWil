@@ -22,14 +22,25 @@ const groenten = [
 ];
 
 
+    // <h2>checkbox</h2>
+    // <div class="checkbox" id="checkboxGroup">
+    //   <input type="checkbox" name="optie1" id="1" />
+    //   <input type="checkbox" name="optie2" checked id="2" />
+    // </div>
+console.log("test");
+
 //script oefening1
+const checkbox = document.createElement("h2")
 const container = document.querySelector("#lijst")
 
 groenten.forEach((groente)=>{
-  const optieGroente = document.createElement("p")
-  groente.textContent = groente.naam
+  const optieGroente = document.createElement("input")
   container.appendChild(optieGroente)
+  optieGroente.type = "checkbox"
+  optieGroente.name = groente.naam
+  optieGroente.id = groente.id
+
 })
 
-
-console.log("test");
+checkbox.textContent = "checkbox"
+document.body.appendChild(checkbox)
